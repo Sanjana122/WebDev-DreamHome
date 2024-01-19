@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/images/logo.png" type="image/x-icon" />
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/public/assets/dashboard.css">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body{
+            background-color: #acb3af;
+            color:rgb(20, 19, 19);
+            background-image: url(/pictures/change-password-bg.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+        .parts{
+            display: grid;
+            grid-template-columns: 50% 50%;
+            height:100vh;
+        }
+        .split1{
+            background-color: #d6ddd9;
+        }
+        .split2{
+            background-color: #d2d1d9;
+        }
+    </style>
+    <title>Dashboard/change_password</title> 
+</head>
+<body>
+    <%- include('../partials/admindashboard') %>
+    <section class="home">
+    <div class="parts">
+        <div class="split1">
+            <br>
+            <br>
+            <h1 style="text-align: center;">Approved Customers</h1>
+            <br><br>
+            <p style="text-align: center;">
+                    Name    : John<br>
+                    email   : john@example.com<br>
+                    mobile  : 9876543210<br>
+                    Budget  : 80000/-<br><br>
+                <hr>
+            </p>
+            <br>
+            <p style="text-align: center;">
+                    Name    : John<br>
+                    email   : john@example.com<br>
+                    mobile  : 9876543210<br>
+                    Budget  : 80000/-<br><br>
+                <hr>
+            </p>
+            <br>
+            <p style="text-align: center;">
+                    Name    : John<br>
+                    email   : john@example.com<br>
+                    mobile  : 9876543210<br>
+                    Budget  : 80000/-<br><br>
+                <hr>
+            </p>
+        </div>
+        <div class="split2">
+            <br>
+            <br>
+            <h1 style="text-align: center;">Pending Customers</h1>
+            <br><br>
+            <p style="text-align: center;">
+                    Name    : John<br>
+                    email   : john@example.com<br>
+                    mobile  : 9876543210<br>
+                    Budget  : 80000/-<br><br>
+                <hr>
+            </p>
+            <br>
+            <p style="text-align: center;">
+                    Name    : John<br>
+                    email   : john@example.com<br>
+                    mobile  : 9876543210<br>
+                    Budget  : 80000/-<br><br>
+                <hr>
+            </p>
+            <br>
+            <p style="text-align: center;">
+                    Name    : John<br>
+                    email   : john@example.com<br>
+                    mobile  : 9876543210<br>
+                    Budget  : 80000/-<br><br>
+                <hr>
+            </p>
+        </div>
+    </div>
+    </section>
+    <script src="/public/JS/dashboard.js"></script>
+</body>
+</html>

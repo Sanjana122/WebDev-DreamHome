@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/images/logo.png" type="image/x-icon" />
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/public/assets/dashboard.css">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
+    <title>Dashboard/Land-Buy</title> 
+
+    <style>
+        body{
+            background-color: rgba(239, 239, 239, 0.788);
+;
+        }
+        .property{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width:800px;
+            height:215px;
+            box-shadow: 2px 2px 5px gray;
+            margin-bottom: 50px;
+            position: relative;
+            margin-left:10%;
+            margin-top: 5%;
+        }
+
+        /* contact owner button  */
+        .contact-button{
+            margin-top:15%;
+            margin-left:15%;
+            width: 80%;
+            height:40px;
+            border-radius: 70px;
+            background-color: orange;
+            color:white;
+            border:none;
+            font-size: 18px;
+        }
+
+        .contact-button:hover{
+            background-color: rgb(237, 188, 97);
+            box-shadow: 2px 2px 5px gray;
+            transition: 0.15s;
+        }
+
+        /* image slider */
+        .image-slider{
+            position:relative;
+            margin-right:20px;
+        }
+
+        /* image part of the slide show  */
+        img{
+            width:250px;
+        }
+
+        /* property heading and it's description */
+        .property-heading{
+            margin-top: 5%;
+            text-align: left;
+            margin-top: 0;
+            margin-bottom: 20px;
+            margin-left:-10px;
+            font-size: 20px;
+        }
+
+        .property-description{
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        
+        .property-description ul{
+            margin-bottom: 10px;
+            color:rgb(70, 70, 70)
+        }
+        /* price section in the property container */
+        .price-tag{
+            width:250px;
+            background-color: rgb(221, 221, 221);
+            width: 30%;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        /* for left and right arrows of the slide show */
+        .display-left, .display-right{
+            font-size: 15px;
+            padding: 8px;
+            position:absolute;
+            top:50%;
+            background-color: black;
+            color:white;
+            opacity:0.7;
+            border:none;
+            transform:translate(0%,-50%);
+            -ms-transform:translate(-0%,-50%);
+        }
+
+        .display-left{
+            left:0%;
+        }
+
+        .display-right{
+            right:0%;
+        }
+
+        .price{
+            text-align: center; 
+            margin-top: 15%; 
+            font-size: 20px;
+        }
+
+        .sqft{
+            text-align: center; 
+            margin-top: 2px; 
+            font-size: 16px;
+            color:rgb(74, 73, 73)
+        }
+
+        /* For responsiveness of the property container */
+        @media only screen and (max-width:800px){
+            .property{
+                width:600px;
+                height:154px;
+                margin-bottom: 10px;
+                margin-left:15%
+            }
+
+            img{
+                width:180px;
+            }
+
+            .property-heading{
+                
+            text-align: left;
+            margin-top: 1%;
+            margin-bottom: 0px;
+            font-size: 16px;
+            }
+
+            .contact-button{
+            margin-top:15%;
+            margin-left:10%;
+            width: 75%;
+            height:25%;
+            border-radius: 70px;
+            background-color: orange;
+            color:white;
+            border:none;
+            font-size: 14px;
+            }
+
+            .property-description ul{
+            text-align: left;
+            font-size: 12px;
+            margin-top: 10px;
+            margin-left: 10px;
+            }
+
+            .price-tag{
+            width:40%;
+            background-color: rgb(230, 230, 230);
+            }
+
+            .price{
+                font-size: 16px;
+            }
+
+            .sqft{
+                font-size: 12px;
+            }
+            .display-left, .display-right{
+            font-size: 15px;
+            padding: 5px;
+        }
+        }
+
+        .filters-bar{
+           height: 100%;
+            width: 300px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #e3e3e3;
+            overflow-x: hidden;
+            padding-top: 20px;
+            display:none;
+        }
+
+        .sub-btn {
+            padding: 6px 8px 6px 16px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            outline: none;
+            margin-bottom: 5px;
+        }
+
+        .sub-btn:hover {
+            color: #000000;
+        }
+
+        .active {
+        background-color: rgb(132, 132, 132);
+        color: rgb(0, 0, 0);
+        }
+
+        .sub-menu {
+        display: none;
+        background-color: #e3e3e3;
+        padding-left: 8px;
+        }
+
+        .fa-caret-down {
+        float: right;
+        padding-right: 8px;
+        }
+
+        .sub-menu input[type="checkbox"]{
+            width:20px;
+            height:20px;
+        }
+
+        .sub-menu label{
+            font-size: 18px;
+        }
+
+        .heading{
+            font-size: 26px;
+            color:black;
+            text-align: center;
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+
+        .close-btn{
+            position:absolute;
+            top:0px;
+            right:0px;
+            margin: 25px;
+            font-size: 24px;
+            width:30px;
+            background-color:#e3e3e3;
+            color:rgb(24, 24, 24);
+            border:none;
+            cursor:pointer;
+        }
+
+        .apply-button{
+            width:80%;
+            margin-top: 10%;
+            margin-left: 10%;
+            height:30px;
+            font-size: 18px;
+            border-radius: 5px;
+            border:none;
+            background-color: #000000;
+            color: white;
+        }
+
+        .apply-button:hover{
+            background-color: #676767;
+            box-shadow: 1px 1px 2px gray;
+        }
+
+        .filters-button{
+            position:fixed;
+            text-align: center;
+            padding-bottom: 30px;
+            width:150px;
+            height:30px;
+            top:10px;
+            right:20px;
+            background-color: lightgray;
+            border-radius:5px;
+            border:1px solid;
+        }
+
+        .filters-button:hover{
+            background-color: gray;
+            box-shadow: 2px 2px 3px gray;
+        }
+
+</style>
+       
+</head>
+<body>
+
+    <%- include('../partials/dashboard') %>
+    <section class="home">
+        <section class="header">
+            <a href="/dashboard/architects">Architects</a>
+            <a href="/dashboard/contractors">Contractors</a>
+            <a href="/dashboard/designers">Interior Designers</a>
+        </section>
+        <br><br><br><br><br>
+        <h1 style="text-align:center;font-family:'Alkatra',cursive;">Contractors</h1>
+        <% clientInfo.forEach((client)=>{ if(client.profession=='Contractor'){ %>
+    <div class="property">
+        <div class="image-slider">
+            <img class="mySlides1" src="/public/images/dashboard/deals/house-1.jpg" >
+        </div>
+        
+        <div class="property-content">
+            <input type="hidden" name="user_id" value="<%= user._id %>">
+            <input type="hidden" name="client_id" value="<%= client._id %>">
+            
+            <div class="property-description"style="font-size:2rem;font-family:'Exo',sans-serif;"">
+                <ul >Name : <%= client.name %></ul>
+                <ul >Experience : <%= client.experience %></ul>
+                <ul >Projects : <%=client.projects %></ul>
+            </div>
+        </div>
+        
+
+        <div class="price-tag"style="background-color:#ADD8E6;">
+            <div>
+                <h4 class="price">Min Budget : <%= client.minBudget %></h4>
+            </div>
+            <div>
+            <form action="/dashboard/requestClient" method="post">
+                <input type="hidden" name="user_id" value="<%= user._id %>">
+                <input type="hidden" name="client_id" value="<%= client._id %>">
+                <button type="submit" class="contact-button">
+                    Contact
+                </button>
+            </form>
+            <form action="/dashboard/viewProfile" method="post">
+                <input type="hidden" name="user_id" value="<%= user._id %>">
+                <input type="hidden" name="client_id" value="<%= client._id %>">
+                <button type="submit" class="contact-button">
+                    View Profile
+                </button>
+            </form>
+            </div>
+        </div>
+    </div>
+        <%} }) %>
+    
+        <div class="filters-bar" id="filters-bar">
+            <div class="main">
+                <button class="close-btn" style="z-index: 2;top:0;" onclick="Close_Nav()">
+                    <i class="fas fa-times">Filters</i>
+               </button>
+               <br><br>
+                <div class="item">
+                    <h3 class="heading">Filters</h3>
+                </div>
+                <form action="/dashboard/contractors" method="post">
+                <div class="item">
+                    <button class="sub-btn" type="button">Minimum Experience<i class="fa fa-caret-down"></i></button>
+                    <div class="sub-menu">
+                        <div>
+                            <input type="radio" id="type-1" name="minexperience" value=0>
+                            <label for="Property-type">0 years</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="type-2" name="minexperience" value=5>
+                            <label for="Property-type">5 years</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="type-3" name="minexperience" value=10>
+                            <label for="Property-type">10 years</label><br>
+                        </div> 
+                    </div>
+                </div>
+                <br>
+                <div class="item">
+                    <button class="sub-btn" type="button">Minimum Budget<i class="fa fa-caret-down"></i></button>
+                    <div class="sub-menu">
+                        <div>
+                            <input type="radio" id="type-1" name="minBudget" value=0>
+                            <label for="Property-type">0/-</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="type-1" name="minBudget" value=50000>
+                            <label for="Property-type">50,000/-</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="type-2" name="minBudget" value=100000>
+                            <label for="Property-type">1,00,000/-</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="type-3" name="minBudget" value=200000>
+                            <label for="Property-type">2,00,000/-</label><br>
+                        </div>
+                        <div>
+                            <input type="radio" id="type-3" name="minBudget" value=500000>
+                            <label for="Property-type">5,00,000/-</label><br>
+                        </div> 
+                    </div>
+                </div>
+                <br>
+                <div class="item">
+                    <button class="sub-btn" type="button">Location<i class="fa fa-caret-down"></i></button>
+                    <div class="sub-menu">
+                        <div>
+                            <input type="checkbox" id="type-1" name="location" value="Mumbai">
+                            <label for="Property-type">Mumbai</label><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="type-1" name="location" value="Delhi">
+                            <label for="Property-type">Delhi</label><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="type-2" name="location" value="Hyderabad">
+                            <label for="Property-type">Hyderabad</label><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="type-3" name="location" value="Chennai">
+                            <label for="Property-type">Chennai</label><br>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="type-3" name="location" value="Banglore">
+                            <label for="Property-type">Bangalore</label><br>
+                        </div> 
+                    </div>
+                </div>
+                <br>
+                <div class="item">
+                    <button type="submit" name="apply" class="apply-button">Apply</button>
+                </div>
+                </form>
+            </div>
+        </div>
+
+    <div >
+        <button id="openNav" class="filters-button" style="z-index:2;top:0;" onclick="Open_Nav()">Filters</i></button>
+    </div>
+</sec>
+</section>
+    <script>
+
+    function Open_Nav() {
+      document.getElementById("filters-bar").style.display = "block";
+    }
+
+    function Close_Nav() {
+        document.getElementById("filters-bar").style.display = "none";
+    }
+
+
+        var dropdown = document.getElementsByClassName("sub-btn");
+        var i;
+        
+        for (i = 0; i < dropdown.length; i++) {
+          dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+              dropdownContent.style.display = "none";
+            } else {
+              dropdownContent.style.display = "block";
+            }
+          });
+        }
+
+
+
+
+
+
+         var slideIndex = [1,1];
+        var slideId = ["mySlides1", "mySlides2"]
+        showDivs(1, 0);
+        showDivs(1, 1);
+
+        function plusDivs(n, no) {
+        showDivs(slideIndex[no] += n, no);
+        }
+
+        function showDivs(n, no) {
+        var i;
+        var x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {slideIndex[no] = 1}
+        if (n < 1) {slideIndex[no] = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndex[no]-1].style.display = "block";  
+        }
+    </script>
+    <script src="/public/JS/dashboard.js"></script>
+</body>
+</html>

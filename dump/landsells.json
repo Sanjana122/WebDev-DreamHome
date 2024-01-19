@@ -1,0 +1,55 @@
+[
+    {
+        "_id": {
+          "$oid": "644648b62fe24692a6ee6dd0"
+        },
+        "user_id": {
+          "$oid": "6446bf71127375a54b6f2991"
+        },
+        "City": "Hyderabad",
+        "Locality": "Sricity",
+        "Area": 500,
+        "Price": 5000,
+        "Description": "Hello",
+        "__v": 0
+    },{
+        "_id": {
+          "$oid": "644648b62fe24692a6ee6dd3"
+        },
+        "user_id": {
+          "$oid": "6446188240057711b019de29"
+        },
+        "City": "Hyderabad",
+        "Locality": "Sricity",
+        "Area": 500,
+        "Price": 5000,
+        "Description": "Hello",
+        "__v": 0
+    },{
+        "_id": {
+          "$oid": "644648b62fe24692a6ee6dd5"
+        },
+        "user_id": {
+          "$oid": "6446bfee127375a54b6f2993"
+        },
+        "City": "Hyderabad",
+        "Locality": "Sricity",
+        "Area": 500,
+        "Price": 5000,
+        "Description": "Hello",
+        "__v": 0
+      },{
+        "_id": {
+          "$oid": "644648b62fe24692a6ee6dd5"
+        },
+        "user_id": {
+          "$oid": "6446bfee127375a54b6f2993"
+        },
+        "City": "Hyderabad",
+        "Locality": "Sricity",
+        "Area": 500,
+        "Price": 5000,
+        "Description": "Hello",
+        "__v": 0
+      }
+]

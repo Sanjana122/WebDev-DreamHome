@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <link rel="icon" href="/public/images/logo.png" type="image/x-icon" />
+       <link rel="stylesheet" href="/public/assets/home-page.css" type="text/css"/>
+        <link rel="stylesheet" href="/public/assets/contactus.css" type="text/css"/>
+        <title>Dream Home</title>
+        <style>
+          body{
+          margin:0;
+          background-image:url(/public/images/client-reg.jpg);
+          background-position: center;
+          background-size: cover;
+         }
+    
+     h1 {
+       font-size: 3rem;
+       text-align: center;
+     }
+   h2{
+     font-size: 2rem;
+       text-align:left;
+       color: rgb(25, 43, 81);
+   }
+   input{
+     border-radius: 10px;
+   }
+   .Contact-box-container {
+     padding-left: 40rem;
+   
+   }
+
+   table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    border:none;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 18px;
+    border:none;
+  }
+
+     </style> 
+    </head>
+  <%- include('../partials/header') %>
+<body>
+  <div class="Contact-box-container mx-auto">
+    <div class="form-container2">
+      <form action="/clientRegistration" method="post">
+        <br><br><br>
+        <br><br><br>
+        <h1>Client Registration</h1>
+        <div class="inputBox">
+          <table>
+            <tr>
+              <td>Name :</td>
+              <td><input type="text" placeholder="Name " name="name" required></td>
+            </tr>
+            <tr>
+              <td>Email :</td>
+              <td><input type="email" placeholder="email" name="email" required></td>
+            </tr>
+            <tr>
+              <td>Mobile Number :</td>
+              <td><input type="tel"  pattern="[0-9]{10}"placeholder="mobile number" name="mobile" required></td>
+            </tr>
+            <tr>
+              <td>Password :</td>
+              <td><input type="password" placeholder="Password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8-15 characters" required></td>
+            </tr>
+
+            <tr>
+              <td>Profession :</td>
+              <td><select name="profession" class="input" required>
+                <option value="Architect">Architect</option>
+                <option value="Interior Designer">Interior Designer</option>
+                <option value="Contractor">Contractor</option>
+               </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td><label for="experience"><h2>Years of experience:*</h2><span></label></td>
+              <td> <input type="range" min="0" max="30" value="5" id="experience" name="experience" oninput="updateYear(this)"></td>
+            </tr>
+
+            <tr>
+              <td></td>
+              <td><h3><span id="years">5</span> years</h3></td>
+            </tr>
+          </table>
+          
+       </div>
+        <input type="submit" value="send">    
+      </form>
+   </div>
+ </div>
+    </section>
+    
+<script>
+     let updateYear = element => {
+        document.getElementById("years").innerText = element.value;
+      }  
+</script>
+<!--jquery link-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<!--main/custom javascript file link-->
+<script src="main.js"></script> 
+    </body> 
+</html>

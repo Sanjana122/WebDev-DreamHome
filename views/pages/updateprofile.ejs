@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="/public/images/logo.png" type="image/x-icon" />
+        <!----======== CSS ======== -->
+        <link rel="stylesheet" href="/public/assets/dashboard.css">
+        <!----===== Boxicons CSS ===== -->
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+      /* CSS styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        background-image: url(/public/images/update-profile.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      
+      .profile-pic {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+      h1 {
+        margin-top: 0;            
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      p {
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+      #name {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+      #email {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 10px;
+        margin-top: 5px;
+
+      }
+      #bio {
+        line-height: 1.5;
+      }
+      button {
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      button:hover {
+        background-color: #3e8e41;
+      }
+      input[type=file] {
+        display: none;
+      }
+      #file-upload {
+        display: inline-block;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .update-profile,
+      .user-profile{
+        width: 600px;
+        height:600px;
+        margin-left: 25%;
+        margin-top: 2%;
+        padding: 20px;
+        background-color: #ffffff4a;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: left;
+        justify-content: space-between;
+        position: absolute;
+      }
+
+      #file-upload:hover {
+        background-color: #3e8e41;
+      }
+      .update-profile {
+        display:none;
+      }
+      .update-profile label {
+        margin-bottom: 5px;
+        font-weight: normal;
+        font-size: 18px;
+      }
+      .update-profile input {
+        margin-bottom: 10px;
+        padding: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 18px;
+      }
+      .update-profile button {
+        margin-top: 10px;
+      }
+
+        table {
+            width: 100%;
+            border:none;
+        }
+
+        td, th {
+            text-align: left;
+            padding: 8px;
+        }
+        #save-profile{
+          width:300px;
+          align-items: center;
+          margin-left:20%;
+        }
+    </style>
+  </head>
+  <body>
+    <nav class="sidebar close">
+      <header>
+          <div class="image-text">
+              <span class="image">
+                  <a href="/home"><img src="/public/images/logo.png" alt="logo"></a>
+              </span>
+              <div class="text logo-text">
+                  <span class="name"><%= client.name %></span>
+                  <span class="profession"><%= client.profession %></span>
+              </div>
+          </div>
+          <i class='bx bx-chevron-right toggle'></i>
+      </header>
+      <div class="menu-bar">
+          <div class="menu">
+              <ul class="menu-links">
+                  <li class="nav-link">
+                      <a href="/client/updateProfile">
+                          <i class='bx bx-home-alt icon' ></i>
+                          <span class="text nav-text">Update Profile</span>
+                      </a>
+                  </li>
+  
+                  <li class="nav-link">
+                      <a href="/client/approvedDeals">
+                          <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                          <span class="text nav-text">Approved Deals</span>
+                      </a>
+                  </li>
+  
+                  <li class="nav-link">
+                      <a href="/client/pendingDeals">
+                          <i class='bx bx-bell icon'></i>
+                          <span class="text nav-text">Pending Deals</span>
+                      </a>
+                  </li>
+  
+                  <li class="nav-link">
+                      <a href="/client/changePassword">
+                          <i class='bx bx-heart icon' ></i>
+                          <span class="text nav-text">Change Password</span>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+  
+          <div class="bottom-content">
+              <li class="">
+                
+                  <a href="/client/logout">
+                      <i class='bx bx-log-out icon' ></i>
+                      <span class="text nav-text">log out</span>
+                  </a>
+              </li>
+          </div>
+      </div>
+  </nav>
+  
+    <div class="user-profile" id="user-info">
+        <h1>User Profile</h1>
+        <label for="name">Name:</label>
+        <p id="name"><%= client.name%></p>
+        <label for="email">Email:</label>
+        <p id="email"><%= client.email%></p>
+        <label for="mobile">Mobile Number:</label>
+        <p id="mobile"><%= client.mobile%></p>
+        <label for="location">Location:</label>
+        <p id="location"><%= client.location%></p>
+        <label for="projects">Projects:</label>
+        <p id="email"><%= client.projects%></p>
+        <label for="minBudget">Minimum Budget:</label>
+        <p id="minBudget"><%= client.minBudget%></p>
+        <label for="description">Description:</label>
+        <p id="desccription"><%= client.description%></p>
+        <button id="edit-profile">Update Profile</button>
+    </div>
+
+    <div class="update-profile" id="update-profile">
+        <h2>Edit Profile</h2>
+
+        <form action="/client/updateProfile" method="post">
+
+
+        <input type="hidden" name="user_id" value="<%= client._id %>">
+        <table>
+            <tr>
+              <td><label for="name-input">Name:</label></td>
+              <td></td>
+              <td><input type="text" id="name-input" name="name" value="<%= client.name %>"></td>
+            </tr>
+            <tr>
+              <td><label for="email-input">Email:</label></td>
+              <td></td>
+              <td><input type="email" id="email-input" name="email" value="<%= client.email %>"></td>
+            </tr>
+            <tr>
+              <td><label for="email-input">Mobile Number:</label></td>
+              <td></td>
+              <td><input type="number" id="mobile-input" name="mobile" value="<%= client.mobile %>"></td>
+            </tr>
+            <tr>
+              <td><label for="email-input">Location:</label></td>
+              <td></td>
+              <td><input type="text" id="projects-input" name="location" value="<%= client.location %>"></td>
+            </tr>
+            <tr>
+              <td><label for="email-input">Projects:</label></td>
+              <td></td>
+              <td><input type="text" id="projects-input" name="projects" value="<%= client.projects %>"></td>
+            </tr>
+            <tr>
+              <td><label for="minBudget">Minimum Budget:</label></td>
+              <td></td>
+              <td><input type="number" id="budget-input" name="minBudget" value="<%= client.minBudget %>"></td>
+            </tr>
+          </table>
+        <label for="description">Description:</label>
+        <textarea id="email-input" name="description" cols="75" rows="6"><%= client.description %></textarea>
+        <button type="submit" id="save-profile">Save Profile</button>
+
+
+        </form>
+    </div>
+        <script>
+        // JavaScript code
+        const editProfileButton = document.getElementById('edit-profile');
+        const updateProfileSection = document.querySelector('.update-profile');
+        const saveProfileButton = document.getElementById('save-profile');
+        
+        
+          editProfileButton.addEventListener('click', () => {
+            var div2=document.getElementById('update-profile');
+            var div1=document.getElementById('user-info')
+            div2.style.display = "block";
+            div1.style.zIndex = "1";
+            div2.style.zIndex = "2";  
+            div1.style.display="none"        
+          });
+          
+          saveProfileButton.addEventListener('click', () => {
+            const nameInput = document.getElementById('name-input');
+            const emailInput = document.getElementById('email-input');
+            const bioInput = document.getElementById('bio-input');
+            const name = nameInput.value;
+            const email = emailInput.value;
+            const bio = bioInput.value;
+            const nameParagraph = document.getElementById('name');
+            const emailParagraph = document.getElementById('email');
+            const bioParagraph = document.getElementById('bio');
+            nameParagraph.textContent = name;
+            emailParagraph.textContent = email;
+            bioParagraph.textContent = bio;
+            updateProfileSection.style.display = 'none';
+          });
+          
+          const fileUpload = document.getElementById('upload');
+          const fileInputLabel = document.getElementById('file-upload');
+          
+          fileUpload.addEventListener('change', () => {
+            const file = fileUpload.files[0];
+            if (file) {
+              fileInputLabel.textContent = file.name;
+            }
+          });
+
+          fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => {
+              profilePic.src = reader.result;
+            };
+          });       
+        </script>
+        
+    <script src="/public/JS/dashboard.js"></script>
+          </body>
+        </html>

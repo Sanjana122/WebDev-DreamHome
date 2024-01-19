@@ -1,0 +1,87 @@
+[
+    {
+        "_id": {
+          "$oid": "64461e022fe24692a6ee6d51"
+        },
+        "user_id": {
+          "$oid": "6446188240057711b019de29"
+        },
+        "property": "villa",
+        "status": "under",
+        "no_rooms": "2",
+        "balcony": 3,
+        "parking": 2,
+        "city": "hyderabad",
+        "building": "Creekside",
+        "local": "Sricity",
+        "flat": "132",
+        "floor": 8,
+        "price": 5000,
+        "area": 500,
+        "Description": "Fully furnished House",
+        "__v": 0
+      },{
+        "_id": {
+          "$oid": "64461e022fe24692a6ee6d53"
+        },
+        "user_id": {
+          "$oid": "6446bf71127375a54b6f2991"
+        },
+        "property": "villa",
+        "status": "under",
+        "no_rooms": "2",
+        "balcony": 3,
+        "parking": 2,
+        "city": "hyderabad",
+        "building": "Creekside",
+        "local": "Sricity",
+        "flat": "132",
+        "floor": 8,
+        "price": 5000,
+        "area": 500,
+        "Description": "Fully furnished House",
+        "__v": 0
+      },{
+        "_id": {
+          "$oid": "64461e022fe24692a6ee6d55"
+        },
+        "user_id": {
+          "$oid": "6446bfee127375a54b6f2993"
+        },
+        "property": "villa",
+        "status": "under",
+        "no_rooms": "2",
+        "balcony": 3,
+        "parking": 2,
+        "city": "hyderabad",
+        "building": "Creekside",
+        "local": "Sricity",
+        "flat": "132",
+        "floor": 8,
+        "price": 5000,
+        "area": 500,
+        "Description": "Fully furnished House",
+        "__v": 0
+      },{
+        "_id": {
+          "$oid": "64461e022fe24692a6ee6d57"
+        },
+        "user_id": {
+          "$oid": "6446c033127375a54b6f2995"
+        },
+        "property": "villa",
+        "status": "under",
+        "no_rooms": "2",
+        "balcony": 3,
+        "parking": 2,
+        "city": "hyderabad",
+        "building": "Creekside",
+        "local": "Sricity",
+        "flat": "132",
+        "floor": 8,
+        "price": 5000,
+        "area": 500,
+        "Description": "Fully furnished House",
+        "__v": 0
+      }
+]

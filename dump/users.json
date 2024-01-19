@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "6446025220d756056432db5b"
+  },
+  "name": "Sanjana",
+  "email": "thatikondasanjana1@gmail.com",
+  "mobile": {
+    "$numberLong": "6309339875"
+  },
+  "password": "$2b$10$GsSsuZUY2vQbRJrvrpi5hO4R9CUHSFo/qVO30bMz9CJ3Ca7/5OnVq",
+  "is_admin": true,
+  "is_verified": true,
+  "token": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446188240057711b019de29"
+  },
+  "name": "Sam",
+  "email": "st4891004@gmail.com",
+  "mobile": 1234567890,
+  "password": "$2b$10$FBUEgwQRE7wUF.uWA85G9u0bO9890qgec8sbqn4b1AYx3GdcgkmoK",
+  "is_admin": false,
+  "is_verified": true,
+  "token": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446bf71127375a54b6f2991"
+  },
+  "name": "Meghana",
+  "email": "meghana.m21@iiits.in",
+  "mobile": {
+    "$numberLong": "8374754765"
+  },
+  "password": "Maggie@123",
+  "is_admin": false,
+  "is_verified": true,
+  "token": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446bfee127375a54b6f2993"
+  },
+  "name": "Satish",
+  "email": "Satish@21iiits.in",
+  "mobile": {
+    "$numberLong": "9491349875"
+  },
+  "password": "Satish@123",
+  "is_admin": false,
+  "is_verified": true,
+  "token": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446c033127375a54b6f2995"
+  },
+  "name": "Dhrushina",
+  "email": "Dhrushina@21iiits.in",
+  "mobile": 1234567890,
+  "password": "Dhrushina@123",
+  "is_admin": false,
+  "is_verified": true,
+  "token": "",
+  "__v": 0
+}]

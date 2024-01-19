@@ -1,0 +1,61 @@
+[{
+  "_id": {
+    "$oid": "6446147040057711b019dddd"
+  },
+  "name": "Sanjana",
+  "email": "sanjana.t21@iiits.in",
+  "mobile": {
+    "$numberLong": "9876543210"
+  },
+  "password": "$2b$10$Nw3/yekZJq8Mz66PHcqmxOjQQib1.kxCk0iczrVCn5RUa8ldIpolK",
+  "rating": 0,
+  "profession": "Interior Designer",
+  "location": "Not Required",
+  "projects": "CV Constructions",
+  "experience": 15,
+  "minBudget": 10000,
+  "description": "",
+  "is_verified": true,
+  "token": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446c0b0127375a54b6f2998"
+  },
+  "name": "Sudheshna",
+  "email": "Puppy@123gmail.com",
+  "mobile": {
+    "$numberLong": "9876543210"
+  },
+  "password": "Puppy@123",
+  "rating": 4,
+  "profession": "Architect",
+  "location": "Not Required",
+  "projects": "Balaji Constructions",
+  "experience": 10,
+  "minBudget": 100000,
+  "description": "Great Work",
+  "is_verified": true,
+  "token": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6446c114127375a54b6f299b"
+  },
+  "name": "Sumanth",
+  "email": "Sumanth@123gmail.com",
+  "mobile": {
+    "$numberLong": "9876543210"
+  },
+  "password": "Sumanth",
+  "rating": 3,
+  "profession": "Contractor",
+  "location": "Not Required",
+  "projects": "RVP Estates",
+  "experience": 10,
+  "minBudget": 2000,
+  "description": "",
+  "is_verified": true,
+  "token": "",
+  "__v": 0
+}]

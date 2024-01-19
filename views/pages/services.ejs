@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    *{
+        font-family: 'Karla';
+    }
+    header{
+    position: fixed;
+    margin:0;
+    padding:0;
+    width: 100%;
+    top: 0;
+    background-color: rgb(147, 176, 176);
+    z-index:4;
+}
+
+header a{
+    float: left;
+    display:block;
+    color: black;
+    padding:14px 10px;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    text-decoration: none;
+}
+
+header a:hover{
+    background:rgb(61,92,92);
+    color:whitesmoke;
+    border-radius: 10px;
+}
+
+
+#login-bar a{
+    float:left;
+    display:block;
+    color: black;
+    text-align:center;
+    padding:14px 10px;
+    font-family: 'Times New Roman';
+    font-size: 20px;
+    text-decoration: none;
+}
+
+#login-bar a:hover{
+    background:rgb(61,92,92);
+    color:whitesmoke;
+    border-radius: 10px;
+}
+
+#logo{
+    height:20px;
+    width:20px;
+    border-radius: 5px;
+    float: left;
+}
+
+#login-pic{
+    float: right;
+    height:20px;
+    width:20px;
+    margin-top:15px;
+    margin-right: 20px;
+    margin-left:5px;
+}
+
+a{
+    text-decoration:none;
+    color:blue;
+}
+
+    body{
+        background-image:url("/public/images/homepage/interiors/int10.jpg")
+    }
+
+    h1{
+        text-align:center;
+        font-family:serif;
+        font-size:50px;
+        color:rgb(14, 14, 15);
+        text-shadow:fuchsia;
+    }
+
+    .flex-box{
+        margin-top:30px;
+        margin-bottom:30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        background: #FFF;
+        width: 250px;
+        margin: 20px;
+        box-shadow: 0px 0px 20px rgba(0,0,0,0.05);
+        box-sizing:  border-box;
+        padding: 20px;
+        border-radius: 5px;
+        background-color:black;
+    }
+
+    img{
+        height: 100px;
+        width: 100px; 
+        margin-left:60px;
+    }
+    .card h3{
+        text-align:center;
+        font-family:'Times New Roman';
+        color:white;
+    }
+    p{
+        color:white;
+    }
+    body{
+        line-height: 1.5;
+        font-family: 'Poppins', sans-serif;
+    }
+    *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+    }
+    .footer-col .color{
+        color: #bbbbbb;
+    }
+    .container{
+        max-width: 1170px;
+        margin:auto;
+    }
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    ul{
+        list-style: none;
+    }
+    .footer{
+        background-color: #24262b;
+        padding: 10px 0;
+    }
+.footer-col{
+width: 25%;
+padding: 0 15px;
+}
+.footer-col h4{
+font-size: 18px;
+color: #ffffff;
+text-transform: capitalize;
+margin-bottom: 35px;
+font-weight: 500;
+position: relative;
+}
+.footer-col h4::before{
+content: '';
+position: absolute;
+left:0;
+bottom: -10px;
+background-color: #e91e63;
+height: 2px;
+box-sizing: border-box;
+width: 50px;
+}
+.footer-col ul li:not(:last-child){
+margin-bottom: 10px;
+}
+.footer-col ul li a{
+font-size: 16px;
+text-transform: capitalize;
+color: #ffffff;
+text-decoration: none;
+font-weight: 300;
+color: #bbbbbb;
+display: block;
+transition: all 0.2s ease;
+}
+.footer-col ul li a:hover{
+color: #ffffff;
+padding-left: 8px;
+}
+.footer-col .social-links a{
+display: inline-block;
+height: 40px;
+width: 40px;
+background-color: rgba(255,255,255,0.2);
+margin:0 10px 10px 0;
+text-align: center;
+line-height: 40px;
+border-radius: 50%;
+color: #ffffff;
+transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+color: #24262b;
+background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+.footer-col{
+width: 50%;
+margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+.footer-col{
+width: 100%;
+}
+}
+    </style>
+    <%- include('../partials/header') %>
+    <body>
+        <br><br><br>
+        <div class="container">
+            <h1>Our Services</h1>
+        <div class='flex-box'>
+        <div class='card'>
+            <h3>Land Sell</h3>
+             <div class='img'><img src="/public/images/homepage/land/land1.jpg"></div>
+                <p class='title'>Selling a property at the right price at the right time takes a good amount of effort too.  Users can Sell the Land by giving its characteristics like location, Area, Minimum Budget etc..We also give the reasonable cost for your land which you want to sell.</p>
+            </div>
+        <div class='card'>
+            <h3>Land Buy</h3>
+            <div class='img'><img src="/public/images/homepage/land/land-8.jpg"></div>
+            <p class='title'>Buying property needs due diligence and a lot of hard work from the buyer.Dream Home provides Land Buyers to preview hundreds of Lands within a few hours from the comfort of their couches like Location, Area, Budget etc..</p>
+        </div>
+        <div class='card'>
+            <h3>House Buy</h3>
+            <div class='img'><img src="/public/images/homepage/house/house9.jpg"></div>
+            <p class='title'>Buying property needs due diligence and a lot of hard work from the buyer.Dream Home provides Buyers to preview hundreds of homes within a few hours from the comfort of their couches like based on Location, Area, Price,Type of House etc...</p>
+        </div>
+        <div class='card'>
+            <h3>House Sell</h3>
+            <div class='img'><img src="/public/images/homepage/house/house4.jpg"></div>
+            <p class='title'>Selling a property at the right price at the right time takes a good amount of effort too.  Users can Sell the house by giving its characteristics like Location, Area, Type,Budget etc..We also give the good cost for your house which you want to sell.</p>
+        </div>
+        <div class='card'>
+            <h3>Construction</h3>
+            <div class='img'><img src="/public/images/homepage/construction/construct-4.jpg"></div>
+            <p class='title'> They provide a detail view, guidlines for construction of the house. Based on their requirements we sort them and users choose the contractor and make a deal with them.The contractor will bring the workers and all items required for that. </p>
+        </div>
+        <div class='card'>
+            <h3>Planning</h3>
+            <div class='img'><img src="/public/images/homepage/planning/planning10.jpg"></div>
+            <p class='title'>The Architect will consider the requirements and plan the house. User deal with the Architect and finalise the deal where the primary objective of the building plan is to provide an idea of the entire building construction. </p>
+        </div>
+        <div class='card'>
+            <h3>Interior Designing</h3>
+            <div class='img'><img src="/public/images/homepage/interiors/int11.jpg"></div>
+            <p class='title'>
+                They can even contact the designers. We also provide the 
+                updates if there through this website like offers or new designers. We also suggest best designs if required. These webpage feature that showcase different styles of interiors.</p>
+    </div>
+</div>
+</div>
+</body>
+<%- include('../partials/footer') %>
+</html>

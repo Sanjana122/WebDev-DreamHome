@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signin</title>
+	<link rel="stylesheet" type="text/css" href="/public/assets/signin&signup.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="styleshe
+	et">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+	<img class="wave" src="/public/images/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="/public/images/bg.svg">
+		</div>
+		<div class="login-content">
+			<form name="myform" action="/signin" method="post" onsubmit="select()">
+				<img src="/public/images/avatar.svg">
+				<h2 class="title">Welcome</h2>
+				<div class="radio-group">
+					<label>User Type&nbsp;:&nbsp;</label>
+					<label><input type="radio" id="radio1" name="usertype" value="admin" required>Admin</label>&nbsp;
+					<label><input type="radio" id="radio2" name="usertype" value="client" required>Client</label>&nbsp;
+					<label><input type="radio" id="radio3" name="usertype" value="user" required>User</label>
+				</div>
+				<br>
+				<div class="input-div one">
+					<div class="i"> 
+						 <i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+						 <h5>UserEmail</h5>
+						 <input type="email" class="input" name="email" required>
+				 </div>
+			    </div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" name="password" required>
+            	   </div>
+            	</div>
+            	<a href="/forgetPassword">Forgot Password?</a>
+            	<input type="submit" class="btn" value="Login">
+				<p class="message">Not yet Registered?<a href="/signup">Register</a>
+				</p>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="/public/js/signin&signup.js"></script>
+	<style>
+		.radio-group {
+			display:center;
+			flex-direction:row;
+			margin-bottom: 0px;
+			
+		}
+		.radio-group label {
+			margin-bottom: 5px;
+			
+		}
+		.radio-group input[type="radio"] {
+			margin-right: 2px;
+		}
+	</style>
+	<script type="text/javascript">
+		function select()
+		{
+			var1=document.getElementById("radio1");
+			var2=document.getElementById("radio2");
+			var3=document.getElementById("radio3");
+			if(var1.checked==true)
+			{
+				document.myform.action="/admin/signin";
+			}
+			else if(var2.checked==true)
+			{
+				document.myform.action="/client/signin";
+			}
+			else{
+				document.myform.action="/signin";
+			}
+	   }
+	  </script>
+</body>
+</html>

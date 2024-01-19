@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/images/logo.png" type="image/x-icon" />
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="/public/assets/dashboard.css">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa" rel="stylesheet">
+    <title>Dashboard/Land-Buy</title> 
+</head>
+<body>
+    <%- include('../partials/dashboard') %>
+    <div class="photo">
+        <img class="p9"  src="/public/images/backcolor1.jpg"style="width:100%;height:100%;background-repeat: no-repeat;
+        background-attachment: fixed;" alt="">
+     </div>
+    <section class="home">
+       
+        <section class="header">
+            <a href="/dashboard/land_buy">Buy</a>
+            <a href="/dashboard/land_sell">Sell</a>
+        </section>
+        <br><br><br><br>
+        <form action="/dashboard/land_sell" method="post">
+            <div class="sell-page">
+                <div class="owner-details">
+                    <input type="hidden" name="user_id" value="<%= user._id %>">
+                    
+                
+  
+                    
+                    <!-- <div class="items">
+                        <div class="items-left">
+                            <p style="font-size: larger;margin-bottom: 5px; margin-top: 10px;">City:</p>
+                            <input type="text" placeholder="City"  id="city" name="city" value="city"style="width: 500px; height :30px ; border-width: 0.5px; border-radius: 5px ; border-style:solid; padding-top: 2px;padding-bottom: 2px;"  requried>
+                        </div>
+                        <div>
+                            <p style="font-size: larger;margin-bottom: 5px; margin-top: 10px;">Locality:</p>
+                            <input type="text" placeholder="locality"  id="locality" value="locality" name="locality"style="width: 500px; height :30px ;border-width: 0.5px; border-radius: 5px ; border-style:solid; padding-top: 2px;padding-bottom: 2px;"  requried>
+                        </div>
+                    </div> -->
+                </div>
+               
+                <div class="property-details">
+                    <div class="heading">
+                        <h3 style="text-align: center;  font-family: 'Comfortaa', cursive;">
+                            Land Details
+                        </h3>
+                    </div>
+        
+                    <div class="details">
+                       <div class="items">
+                            <div class="items-left">
+                                <p>Area (in sqft):</p>
+                                <input type="number" name="area" value="Area" style="width: 500px; height :30px ; border-radius: 5px ; border-style:solid; border-width: 0.5px;font-size:20px;font-family:'Comfortaa', cursive;" required/>
+                            </div>
+                       </div>
+                       <div>
+                        <p style="font-size: larger;margin-bottom: 5px; margin-top: 10px;font-family:Georgia, 'Times New Roman', Times, serif">Locality:</p>
+                        <input type="text" placeholder=""  id="" value="" name="locality"style="width: 500px; height :30px ;border-width: 0.5px; border-radius: 5px ; border-style:solid; padding-top: 2px;padding-bottom: 2px;font-size:20px;font-family:'Comfortaa', cursive;" requried>
+                    </div>
+                    <div class="items-left">
+                        <p style="font-size: larger;margin-bottom: 5px; margin-top: 10px;">City:</p>
+                        <input type="text" placeholder=""  id="" name="city" value=""style="width: 500px; height :30px ; border-width: 0.5px; border-radius: 5px ; border-style:solid; padding-top: 2px;padding-bottom: 2px;font-size:20px;font-family:'Comfortaa', cursive;"  requried>
+                    </div>
+                       <div class="items">
+                            <div>
+                               <p>Price (in Rs):</p> 
+                               <input type="number" name="price" value="price" style="width: 500px; height :30px ; border-radius: 5px ; border-style:solid; border-width: 0.5px;font-size:20px;font-family:'Comfortaa', cursive;" required maxlength="100" />
+                            </div>
+                       </div>
+
+                       <div class="items"></div>
+                       <div class="items-left">
+                        <p>Image :</p>   
+                        <input type="file" id="files" name="files[]"style="width: 500px; height :30px ; border-radius: 5px ; border-style:solid; border-width: 0.5px;font-size:20px;font-family:'Comfortaa', cursive;" multiple >
+                    </div></div>
+                            <div class="items-left">
+                                <p style="font-size: larger;margin-bottom: 5px; margin-top: 10px;font-family:Georgia, 'Times New Roman', Times, serif">Description:</p>
+                                <textarea style="width: 500px; height :30px ; border-radius: 5px ; border-style:solid; margin-left:35px;border-width: 0.5px;padding:40px;font-size:20px;font-family:Georgia, 'Times New Roman', Times, serif"name="desc"></textarea>
+                            </div>
+                    </div>
+        
+                    <div>
+                        <button class="post-button" type="submit">
+                            Post
+                        </button>
+                    </div>
+                   
+                </div>
+           
+            </form>
+        </div>
+       
+        </section>
+    </section>
+   
+    <script src="/public/JS/dashboard.js"></script>
+</body>
+</html>

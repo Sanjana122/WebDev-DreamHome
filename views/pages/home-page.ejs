@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width" initial-scale="1.0">
+        <link rel="icon" href="/public/images/logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="/public/assets/home-page.css" type="text/css"/> 
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.min.js">
+        <title>Dream Home</title>
+        <style>
+            
+/*responsive*/
+@media(max-width: 767px){
+  .home-content{
+    width: 100%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .home-content{
+    width: 100%;
+}
+}
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+        </style>
+    </head>
+    <%- include('../partials/header') %>
+    <body>
+        <div class="home">
+            <video autoplay muted loop>
+              <source src="/public/images/homepage/home/bg.mp4" type="video/mp4" />
+            </video>
+            <div class="overlay">
+            <div class="home-content">
+            <p id="title"><strong>Dream Home</strong><br>~ A key to your future</p>
+            </div>
+            </div>
+        </div>
+    </body>
+</html>

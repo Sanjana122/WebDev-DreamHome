@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/assets/dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+            margin: 0px;
+            font-size: 18px;
+            background-color: rgb(225, 245, 251);
+            background-image: url(/public/images/view-feedback.jpg);
+            background-position: center;
+            background-size: cover;
+            font-family: 'Alkatra',cursive; 
+        }
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            box-shadow: 2px 2px 5px gray;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/admindashboard') %>
+    <section class="home">
+        <br><br><br>
+        <h1 style="text-align: center; color:rgb(0, 0, 0);font-family:'Alkatra',cursive;">Feedbacks of the Client</h1>
+        <br>
+        <% feedbackInfo.forEach((feedback)=>{ %>
+            <table >
+  
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User Name :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.name %></td>
+                </tr>
+                
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User EmailId :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.email %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Rating :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.rating %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Feedback :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.feedback %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Complaints :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.complaints %></td>
+                </tr>
+              </table>
+              <table >
+  
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User Name :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.name %></td>
+                </tr>
+                
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User EmailId :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.email %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Rating :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.rating %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Feedback :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.feedback %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Complaints :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.complaints %></td>
+                </tr>
+              </table>
+              <table >
+  
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User Name :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.name %></td>
+                </tr>
+                
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User EmailId :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.email %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Rating :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.rating %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Feedback :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.feedback %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Complaints :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.complaints %></td>
+                </tr>
+              </table>
+              <table >
+  
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User Name :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.name %></td>
+                </tr>
+                
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User EmailId :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.email %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Rating :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.rating %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Feedback :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.feedback %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Complaints :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.complaints %></td>
+                </tr>
+              </table>
+              <table >
+  
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User Name :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.name %></td>
+                </tr>
+                
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">User EmailId :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.email %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Rating :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.rating %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Feedback :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.feedback %></td>
+                </tr>
+                <tr>
+                  <td style="font-family: 'Alkatra',cursive;">Complaints :</td>
+                  <td style="font-family: 'Alkatra',cursive;"><%= feedback.complaints %></td>
+                </tr>
+              </table>
+              
+        <% }) %>
+    </section>
+</body>
+<script src="/public/JS/dashboard.js"></script>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/public/images/logo.png" type="image/x-icon" />
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&family=Source+Sans+Pro:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/assets/basicinfo.css">
+    <link rel="stylesheet" href="/public/assets/listing.css">
+    <!-- <link rel="stylesheet" href="/public/assets/upload.css"> -->
+    <title>Dashboard/House Sell</title> 
+    <style>
+      .main2{
+         display:flex;
+      }
+    </style>
+</head>
+<body>
+    <section class="home"style=" margin-top:0px;">
+      <br>
+        <form action="/dashboard/house_sell" method="post">
+           <!-- basic info-->
+           <div class="sample" style="margin-left:60px;">
+            <div class="container">
+               <div>
+                  <h1>Basic Information</h1>
+               </div>
+               <input type="hidden" name="user_id" value="<%= user._id %>">
+                <div class="main">
+                  <div class="main1">Property Type<span class="imp">*</span></div>
+               <div class="main2" id="property" name="property">
+               <div class="main3">
+                  <input type="radio" id="apartment" value="Apartment" name="property">
+                  <label for="apartment">Apartment</label>
+               </div>
+               <div >
+                  <input type="radio" id="Independent" value="Independent House" name="property">
+                  <label for="Independent">Independent House</label>
+               </div>
+               <div>
+                  <input type="radio" id="villa" value="villa" name="property">
+                  <label for="villa">Villa</label>
+               </div>
+            
+            </div>
+               </div>
+            
+                <div class="main">
+                  <div class="main1">Construction Status<span class="imp">*</span></div>
+            <div class="main2">
+               <div class="main3">
+                  <input type="radio" id="status" value="ready" name="status">
+                  <label for="ready">Ready to Move</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="status" value="under" name="status">
+                  <label for="under">Under Construction</label>
+               </div>
+            </div>
+               </div>
+            
+                <div  class="main">
+                  <div class="main1">BHK<span class="imp">*</span></div>
+            <div class="main2" id="no_rooms" name="no_rooms">
+               <div class="main3">
+                  <input type="radio" id="1b" value=1 name="no_rooms">
+                  <label for="1b">1BHK</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="2b" value=2 name="no_rooms">
+                  <label for="2b">2BHK</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="3b" value=3 name="no_rooms">
+                  <label for="3b">3BHK</label>
+               </div>
+            </div>
+               </div>
+            
+                <div class="main">
+                  <div class="main1">Bathroom<span class="imp">*</span></div>
+            <div class="main2" id="no_baths" name="no_baths">
+               <div class="main3">
+                  <input type="radio" id="1" value="1" name="no_baths">
+                  <label for="1">1</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="2" value="2" name="no_baths">
+                  <label for="2">2</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="3" value="3" name="no_baths">
+                  <label for="3">3</label>
+               </div>
+            </div>  
+            </div> 
+            
+              <div class="main">
+                  <div class="main1">Balcony<span class="imp">*</span></div>
+            <div class="main2" id="balcony" name="balcony">
+               <div class="main3">
+                  <input type="radio" id="11" value=1 name="balcony">
+                  <label for="11">1</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="22" value=2 name="balcony">
+                  <label for="22">2</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="33" value=3 name="balcony">
+                  <label for="33">3</label>
+               </div>
+            </div>  
+            </div> 
+            
+            <div class="main">
+            <div class="main1">Car-Parking<span class="imp">*</span></div>
+            <div class="main2" id="parking" name="parking">
+               <div class="main3">
+                  <input type="radio" id="car1" value=1 name="parking">
+                  <label for="car1">1</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="car2" value=2 name="parking">
+                  <label for="car2">2</label>
+               </div>
+               <div class="main3">
+                  <input type="radio" id="car3" value=3 name="parking">
+                  <label for="car3">3</label>
+               </div>
+            </div>  
+            </div> 
+            </div>
+
+               <div class="photo">
+                  <img class="p291"  src="/public/images/basic.png" alt="">
+               </div>
+
+            </div>
+            </div>
+
+            <!--listing-->
+            <div class="sample" style="margin-left:60px;">
+               <div class="container">
+                  <div>
+                     <h1>Listing Address</h1>
+                  </div>
+                  <br>
+                  <div class="m1">
+                     <input type="text" id="building"name="city" required />
+                     <span class="bar"></span>
+                     <label for="name">City</label>
+                  </div>
+
+                  <div class="m1">
+                     <input type="text" id="building"name="building" required />
+                     <span class="bar"></span>
+                     <label for="name">Building</label>
+                  </div>
+
+                  <div class="m1">
+                     <input type="text"id="local" name="local" required />
+                     <span class="bar"></span>
+                     <label for="email">Locality</label>
+                  </div>
+   
+                  <div class="m1">
+                     <input type="text" id="flat"name="flat" required />
+                     <span class="bar"></span>
+                     <label for="email">Flat.No</label>
+                  </div>
+
+                  <div class="m1">
+                     <input type="number"id="floor" name="floor" min="0" max="800" required />
+                     <span class="bar"></span>
+                     <label for="email">Floor</label>
+                  </div>
+
+                  <div class="m1">
+                     <input type="number"id="price" name="price" min="0" max="80000" required />
+                     <span class="bar"></span>
+                     <label for="email">Price</label>
+                  </div>
+
+                  <div class="m1">
+                     <input type="number"id="area" name="area" min="0" max="8000" required />
+                     <span class="bar"></span>
+                     <label for="email">Area(in Sqfts)</label>
+                  </div>
+
+                  <div class="m1">
+                     <input type="text"id="desc" name="desc" required />
+                     <span class="bar"></span>
+                     <label for="email">Description</label>
+                  </div>
+
+                  <div class="photo" >
+                     <img src="/public/images/listing2.png" alt="">
+                  </div>
+   
+               </div>
+               </div>
+
+               <!--upload-->
+               <div class="sample" style="margin-left:60px;">
+                  <div class="container">
+                     <div>
+                        <h1>Upload Images</h1>
+                     </div>
+
+                     <div class="field" align="left">
+                        <input type="file" id="files" name="files[]" multiple />
+                     </div>
+
+                     <div class="photo" style="margin-top:1200px;">
+                        <img src="/public/images/upload1.png" alt="">
+                     </div>
+                     
+                     <div class="submit" style="margin-top:5px;margin-left:0px;">
+                        <button type="submit" class="continue">Post</button>
+                     </div>
+
+                  </div>
+               </div>
+               
+        </form>
+        <script src="/public/JS/upload.js"></script>
+   </section>
+</body>
+

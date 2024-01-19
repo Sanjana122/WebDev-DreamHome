@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sendFeedback</title>
+    <link rel="stylesheet" href="/public/assets/dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <style>
+
+        body{
+            margin: 0px;
+            background-color: rgb(225, 245, 251);
+            background-image: url(/public/images/send\ feed\ back.jpg);
+            background-size: cover;
+            background-position: center;
+        }
+
+        label{
+            margin-left: 20px;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .unit{
+            display:flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center ;
+        }
+
+        .review-form{
+            width:600px;
+            margin-left: 20%;
+            margin-top: 2%;
+            box-shadow: 1px 1px 5px rgb(135, 135, 135);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.308);
+        }
+
+        .text-box{
+            width:300px;
+            height:30px;
+            margin:5px;
+            
+        }
+
+        .submit-button{
+            text-align: center;
+            margin-left: 27%;
+            margin-top: 7px;
+            width:250px;
+            height: 33px;
+            border-radius: 7px;
+            border:none;
+            background-color: rgb(103, 0, 108);
+            color:white;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .submit-button:hover{
+            background-color:rgb(178, 88, 176) ;
+            box-shadow: 2px 2px 3px gray;
+        }
+
+        textarea{
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        
+        
+        h3{
+            margin-top: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <a href="/home"><img src="/public/images/logo.png" alt="logo"></a>
+                </span>
+    
+                <div class="text logo-text">
+                    <span class="name"><%= user.name %></span>
+                    <span class="profession">Customer</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+    
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/dashboard/house_buy">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">HOUSE</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-link">
+                        <a href="/dashboard/land_buy">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">LAND</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-link">
+                        <a href="/dashboard/architects">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Build Home</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-link">
+                        <a href="/dashboard/deals">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Deals</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-link">
+                        <a href="/dashboard/changePassword">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">change Password</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="bottom-content">
+                <li class="">
+                    <a href="/dashboard/logout">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+    <form  action="/dashboard/sendFeedback" method="post">
+        <div class="review-form">
+
+            <div class="Heading">
+                <br>
+                <h3 >Send Feedback Of this Client to Admin</h3>
+            </div>
+            <div class="unit">
+                <div class="sub-unit">
+                    <label for="name">Client Name :</label>
+                </div>
+                <input type="hidden" name="user_id" value="<%= user._id %>">
+                <input type="hidden" name="client_id" value="<%= client._id %>">
+                <div class="sub-unit">
+                    <input type="text" name="name" class="text-box" value="<%= client.name %>" placeholder="Name" required>
+                </div>
+            </div>
+            <div  class="unit">
+                <div class="sub-unit">
+                    <label for="Email">Rating [0-10] :</label>
+                </div>
+                <div class="sub-unit">
+                    <input type="number" name="rating" class="text-box" pattern="[0-9]|10" min="0" max="10" required>
+                </div>
+            </div>
+            <br>
+            <div  class="unit-textarea">
+                <div class="sub-unit">
+                    <label for="name">Feedback related to Service:</label>
+                </div>
+                <div class="sub-unit">
+                    <textarea name="feedback" id="reason" cols="75" rows="8" required></textarea>
+                </div>
+            </div>
+            <br>
+            <div  class="unit-textarea">
+                <div class="sub-unit">
+                    <label for="name">Complaints regarding the service:</label>
+                </div>
+                <div class="sub-unit">
+                    <textarea name="complaints" id="reason" cols="75" rows="8"></textarea>
+                </div>
+            </div>
+            <br>
+            <div>
+                <button type="submit" class="submit-button">Send</button>
+            </div>
+        </div>
+    </form>
+    </section>
+</body>
+<script src="/public/JS/dashboard.js"></script>
+</html>

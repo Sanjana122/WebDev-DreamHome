@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/public/assets/dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="/public/images/logo.png" type="image/x-icon" />
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: 'Poppins', sans-serif;
+        align-items: center;
+        justify-content: center;
+        background-image: url(/public/images/profile.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: row;
+        width: 1200px;
+        padding: 20px 20px;
+    }
+
+    .box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 20px;
+        background-color: #0d1425;
+        color: #fff;
+        padding: 30px 30px;
+        border-radius: 20px;
+        margin-left:30% ;
+        width:300px;
+        height:520px;
+        box-shadow: 1px 1px 5px gray;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .box img{
+        border-radius: 50%;
+        border: 2px solid #fff;
+        height: 150px;
+        width: 150px;
+    }
+
+    .box ul{
+        margin-top: 15px;
+        font-size: 20px;
+        text-align: center;
+    }
+    .box ul li{
+        list-style: none;
+        margin-top: 25px;
+        font-weight: 100;
+    }
+
+    .box ul li i{
+        cursor: pointer;
+        margin: 20px;
+        font-size: 20px;
+    }
+
+    .box ul li i:hover{
+        opacity: 0.6;
+    }
+
+    .About{
+        margin-left: 50px;
+        display: table;
+        padding: 30px 30px;
+        font-size: 20px;
+        background-color: #fff;
+        border-radius: 20px;
+        width:400px;
+        height:520px;
+        box-shadow: 1px 1px 5px gray;
+        border-bottom-left-radius: 0;
+        border-top-left-radius:0 ;
+    }
+
+    .About h1{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-size: 50px;
+        font-weight: 500;
+    }
+
+    .About ul li{
+        list-style: none;
+    }
+
+    .About ul{
+        margin-top: 20px;
+    }
+
+    .feedback-button{
+        width:70%;
+        margin-left: 5%;
+        height:30px;
+        background-color: #efefef;
+        border-radius:5px;
+        border:none;
+        color: #000000;
+        font-size: 16px;
+        margin-top: 20px;
+    }
+
+    .feedback-button:hover{
+        background-color: #a0a2a7;
+        box-shadow: 2px 2px 5px gray;
+    }
+
+    .contact-button{
+        margin-top: 20px;
+        width:70%;
+        margin-left: 15%;
+        height:30px;
+        background-color: #00013d;
+        border-radius:5px;
+        border:none;
+        color: #ffffff;
+        font-size: 16px;
+    }
+
+    .contact-button:hover{
+        background-color: #364f8e;
+        box-shadow: 2px 2px 5px gray;
+
+    }
+    @media screen and (max-width: 1068px) {
+        .container{
+            display: table;
+        }
+
+        .box{
+            width: 100%;
+        }
+
+        .About{
+            width: 100%;
+            margin: 0;
+            margin-top: 20px;
+        }
+
+        .About h1{
+            text-align: center;
+        }
+    }
+</style>
+<body>
+    
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <a href="/home"><img src="/public/images/logo.png" alt="logo"></a>
+                </span>
+    
+                <div class="text logo-text">
+                    <span class="name"><%= user.name %></span>
+                    <span class="profession">Customer</span>
+                </div>
+            </div>
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+    
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="/dashboard/house_buy">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">HOUSE</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-link">
+                        <a href="/dashboard/land_buy">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">LAND</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-link">
+                        <a href="/dashboard/architects">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Build Home</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-link">
+                        <a href="/dashboard/deals">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Deals</span>
+                        </a>
+                    </li>
+    
+                    <li class="nav-link">
+                        <a href="/dashboard/changePassword">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">change Password</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="bottom-content">
+                <li class="">
+                    <a href="/dashboard/logout">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+    <div class="container">
+        <div class="box">
+            <img src="/public/images/BoyProfile.jpeg" alt="">
+            <ul>
+                <li><%= client.name %></li>
+                <li><%= client.email %></li>
+                <li><%= client.location %></li>
+
+                <li><i style="font-size:24px" class="fa"></i>
+                    <i style="font-size:24px" class="fa"></i>
+                    <i style="font-size:24px" class="fa"></i></li>
+                    
+                <div>
+                    <form action="/dashboard/loadSendFeedback" method="post">
+                        <input type="hidden" name="user_id" value="<%= user._id %>">
+                        <input type="hidden" name="client_id" value="<%= client._id %>">
+                        <button type="submit" class="feedback-button">
+                            Feedback
+                        </button>
+                    </form>
+                </div>
+                
+            </ul>
+        </div>
+        <div class="About">
+            <ul>
+                <h1>About</h1>
+            </ul>
+            <ul>
+                <h3>Profession</h3>
+                <li><%= client.profession %></li>
+            </ul>
+            <ul>
+                <h3>Experience</h3>
+                <li><%= client.experience %></li>
+            </ul>
+            <ul>
+                <h3>Projects</h3>
+                <li><%= client.projects %></li>
+            </ul>
+            <ul>
+                <h3>Description</h3>
+                <li><%= client.description %></li>
+            </ul>
+            <ul>
+                <h3>Minimum Budget</h3>
+                <li><%= client.minBudget %></li>
+            </ul>
+            <div>
+                <form action="/dashboard/requestClient" method="post">
+                    <input type="hidden" name="user_id" value="<%= user._id %>">
+                    <input type="hidden" name="client_id" value="<%= client._id %>">
+                    <button type="submit" class="contact-button">
+                        Contact
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="/public/JS/dashboard.js"></script>
+
+</body>
+</html>
